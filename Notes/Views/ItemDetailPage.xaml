@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Notes.Views.ItemDetailPage"
+             Title="{Binding Text}">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Save" Command="{Binding SaveCommand}" />
+    </ContentPage.ToolbarItems>
+
+    <StackLayout Spacing="3" Padding="12">
+        <Entry Text="{Binding Text, Mode=TwoWay}" Placeholder="Title" FontSize="Medium" />
+        <Editor Text="{Binding Description, Mode=TwoWay}" Placeholder="My really cool note" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+        <StackLayout>
+            <Button Text="Remove" Command="{Binding RemoveCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
